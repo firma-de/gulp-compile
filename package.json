@@ -1,0 +1,54 @@
+{
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "json-loader": "^0.5.4",
+    "lodash": "^4.0.1",
+    "postcss-loader": "^0.8.0",
+    "precss": "^1.4.0",
+    "react": "^0.14.6",
+    "stream-combiner": "^0.2.2",
+    "style-loader": "^0.13.0",
+    "through2": "^2.0.0",
+    "ts-loader": "^0.8.0",
+    "typescript": "<=1.7.5",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^2.0.5-beta",
+    "webpack-stream": "^3.1.0"
+  },
+  "name": "@firma-de/gulp-compile",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "author": {
+    "name": "firma.de",
+    "email": "techops@firma.de"
+  },
+  "contributors": [
+    {
+      "name" : "Ivan Drinchev",
+      "email" : "drinchev@gmail.com"
+    }
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Compiles TypeScript to JavaScript with no fatigue",
+  "devDependencies": {
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nsp": "^2.3.0",
+    "gulp-plumber": "^1.0.1",
+    "should": "^8.1.1"
+  },
+  "scripts": {
+    "test": "gulp test"
+  }
+}
