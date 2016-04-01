@@ -6,6 +6,7 @@ var path             = require( "path" ),
     mocha            = require( "gulp-mocha" ),
     istanbul         = require( "gulp-istanbul" ),
     nsp              = require( "gulp-nsp" ),
+    coveralls        = require( "gulp-coveralls" ),
     plumber          = require( "gulp-plumber" );
 
 /** Security check */
@@ -26,8 +27,15 @@ gulp.task( "test", ["pre-test"], cb => {
         .pipe( plumber() )
         .pipe( mocha( { reporter : "spec" } ) )
         .on( "error", err => { mochaErr = err; } )
-        .pipe( istanbul.writeReports() )
-        .on( "end", () => { cb( mochaErr ) } );
+        .pipe( istanbul.writeReports( {
+            reporters : ["lcov"],
+            reportOpts : { dir : "./coverage" }
+        } ) )
+        .on( "end", () => {cb( mochaErr )} );
 
 } );
+
+/** Report */
+gulp.task( "report", cb => gulp.src( "coverage/**/lcov.info" )
+                               .pipe( coveralls() ) );
 

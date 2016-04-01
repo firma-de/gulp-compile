@@ -37,14 +37,15 @@
   },
   "contributors": [
     {
-      "name" : "Ivan Drinchev",
-      "email" : "drinchev@gmail.com"
+      "name": "Ivan Drinchev",
+      "email": "drinchev@gmail.com"
     }
   ],
   "main": "index.js",
   "license": "MIT",
   "description": "Compiles TypeScript to JavaScript with no fatigue",
   "devDependencies": {
+    "gulp-coveralls": "^0.1.4",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.10.3",
     "gulp-mocha": "^2.2.0",
