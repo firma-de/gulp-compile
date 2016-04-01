@@ -22,6 +22,10 @@
     "webpack": "^2.0.5-beta",
     "webpack-stream": "^3.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:firma-de/gulp-compile.git"
+  },
   "name": "@firma-de/gulp-compile",
   "version": "0.0.1",
   "engines": {
