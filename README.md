@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@firma-de/gulp-compile.svg)](https://www.npmjs.com/package/@firma-de/gulp-compile)
 [![build status](https://img.shields.io/circleci/project/firma-de/gulp-compile/master.svg)](https://circleci.com/gh/firma-de/gulp-compile)
 [![dependencies](https://img.shields.io/david/firma-de/gulp-compile.svg)](https://david-dm.org/firma-de/gulp-compile)
+[![coverage](https://img.shields.io/coveralls/firma-de/gulp-compile/master.svg)](https://coveralls.io/github/firma-de/gulp-compile)
 
 Compiles TypeScript to JavaScript with no fatigue
 
