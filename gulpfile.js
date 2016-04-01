@@ -36,6 +36,6 @@ gulp.task( "test", ["pre-test"], cb => {
 } );
 
 /** Report */
-gulp.task( "report", cb => gulp.src( "coverage/**/lcov.info" )
+gulp.task( "report", cb => gulp.src( "./coverage/**/lcov.info" )
                                .pipe( coveralls() ) );
 

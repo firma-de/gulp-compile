@@ -16,7 +16,7 @@ machine:
 
 test:
   post:
-    - './node_modules/gulp report'
+    - 'npm run-script report'
 
 deployment:
   npm:

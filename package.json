@@ -54,6 +54,7 @@
     "should": "^8.1.1"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "report" : "gulp report"
   }
 }
