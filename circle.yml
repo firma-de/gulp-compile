@@ -1,0 +1,10 @@
+#
+#  Configuration for Circle CI
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#  » Documentation from Circle CI ( https://circleci.com/docs/configuration )
+#
+
+machine:
+  node:
+    version: 4.1.0
