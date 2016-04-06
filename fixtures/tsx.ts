@@ -1,6 +1,6 @@
 /// <reference path="./tsx.d.ts" />
 
-import { markup } from "./tsx.tsx";
+import { markup } from "./other-tsx.tsx";
 
 function beta( html : any ) {
     return html;

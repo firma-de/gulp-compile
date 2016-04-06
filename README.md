@@ -192,6 +192,11 @@ different settings :
 ]
 ```                
 
+## Changelog
+
+- 0.0.2 - Added support for TypeScript 1.8
+- 0.0.1 - Initial release
+
 ## License
 
 MIT
