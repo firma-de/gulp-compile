@@ -27,7 +27,7 @@
     "url": "git@github.com:firma-de/gulp-compile.git"
   },
   "name": "@firma-de/gulp-compile",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "node": ">=4.2.0"
   },
