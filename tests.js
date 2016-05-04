@@ -4,6 +4,7 @@ var gulp    = require( "gulp" ),
     should  = require( "should" ),
     through = require( "through2" ),
     gutil   = require( "gulp-util" ),
+    webpack = require( "webpack" ),
     compile = require( "./index.js" ),
     fs      = require( "fs" );
 
@@ -25,6 +26,10 @@ describe( "module requirements", function() {
     it( "should not throw if required options are provided", function() {
         this.slow( 1000 );
         should.doesNotThrow( function() { compile( { target : "node" } ); } );
+    } );
+
+    it( "should export webpack too", function() {
+        compile.webpack.should.eql(webpack);
     } );
 
 } );
@@ -82,6 +87,33 @@ describe( "general options", function() {
 } );
 
 describe( "target node", function() {
+
+    it( "should be able to add additional plugins", function( done ) {
+        this.slow( 5000 );
+        this.timeout( 5000 );
+        gulp
+            .src( "./fixtures/plugin.ts" )
+            .pipe( compile( {
+                target : "node",
+                plugins: [
+                    new compile.webpack
+                        .DefinePlugin({ '__PLUGIN__' : JSON.stringify("yes") } )
+                ],
+                silent : true
+            } ).on( "error", ( error ) => console.log( error ) ) )
+            .pipe( through.obj( function( file, enc, callback ) {
+                file.relative.should.equal( "plugin.js" );
+                file.contents.toString( "utf8" )
+                    .should
+                    .equal(
+                        fs.readFileSync(
+                            "./fixtures/compiled/node-proper-plugin.js", "utf-8"
+                        )
+                    );
+                callback( null, file );
+            }, () => done() ) );
+
+    } );
 
     it( "should compile properly typescript", function( done ) {
         this.slow( 4000 );
@@ -288,6 +320,33 @@ describe( "target node", function() {
 } );
 
 describe( "target web", function() {
+
+    it( "should be able to add additional plugins", function( done ) {
+        this.slow( 5000 );
+        this.timeout( 5000 );
+        gulp
+            .src( "./fixtures/plugin.ts" )
+            .pipe( compile( {
+                target : "web",
+                plugins: [
+                    new compile.webpack
+                        .DefinePlugin({ '__PLUGIN__' : JSON.stringify("yes") } )
+                ],
+                silent : true
+            } ).on( "error", ( error ) => console.log( error ) ) )
+            .pipe( through.obj( function( file, enc, callback ) {
+                file.relative.should.equal( "plugin.js" );
+                file.contents.toString( "utf8" )
+                    .should
+                    .equal(
+                        fs.readFileSync(
+                            "./fixtures/compiled/web-proper-plugin.js", "utf-8"
+                        )
+                    );
+                callback( null, file );
+            }, () => done() ) );
+
+    } );
 
     it( "should compile properly typescript", function( done ) {
         this.slow( 5000 );

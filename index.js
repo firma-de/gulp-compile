@@ -111,10 +111,10 @@ module.exports = function( options ) {
             require( "precss" )
         ];
 
-        configuration.plugins = [
+        configuration.plugins.push(
             new webpack.PrefetchPlugin( "react" ),
             new ExtractText( outputStyles, { allChunks : true } )
-        ];
+        );
 
         statsConfiguration.exclude = excludeStats;
 
@@ -161,3 +161,6 @@ module.exports = function( options ) {
     );
 
 };
+
+/** Export webpack */
+module.exports.webpack = webpack;

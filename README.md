@@ -192,8 +192,27 @@ different settings :
 ]
 ```                
 
+## Access raw webpack
+
+You can access the raw webpack from the exports of this module. It is handy if you want to
+add additional plugins
+
+```
+const compile = require("@firma-de/gulp-compile");
+
+gulp.task("build", () => {
+    gulp.src("./server.ts")
+        .pipe( compile( {
+             target : "node",
+             plugins: [ new compile.webpack.DefinePlugin({ '__DEV__' : true } ) ],
+        } ) )
+        .pipe( gulp.dest("./.build") );
+});
+```
+
 ## Changelog
 
+- 0.0.3 - Fixed a bug for web and additional plugins & exposing webpack from compile
 - 0.0.2 - Added support for TypeScript 1.8
 - 0.0.1 - Initial release
 
