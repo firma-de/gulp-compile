@@ -251,7 +251,7 @@ describe( "target node", function() {
                     if ( file.relative === "index.js.map" ) {
                         count--;
                         file.contents.toString( "utf8" )
-                            .replace(/bootstrap\s[a-z0-9]+/, "")
+                            .replace(/bootstrap\s[a-z0-9]+/g, "")
                             .should
                             .equal(
                                 fs.readFileSync(
@@ -497,7 +497,7 @@ describe( "target web", function() {
                     if ( file.relative === "index.js.map" ) {
                         count--;
                         file.contents.toString( "utf8" )
-                            .replace(/bootstrap\s[a-z0-9]+/, "")
+                            .replace(/bootstrap\s[a-z0-9]+/g, "")
                             .should
                             .equal(
                                 fs.readFileSync(
